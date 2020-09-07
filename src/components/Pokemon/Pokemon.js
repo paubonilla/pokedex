@@ -62,6 +62,13 @@ export default function Pokemon(props) {
               Weight:
               <Typography variant="caption"> {weight}</Typography>
             </Typography>
+            {/* <Typography
+              className={classes.pokemonInfo}
+              variant="subtitle1"
+            >
+              Abilities:
+              <Typography variant="caption"> {moves}</Typography>
+            </Typography> */}
             <Typography
               className={classes.pokemonInfo}
               variant="subtitle1"
