@@ -1,15 +1,19 @@
 import React from 'react';
-import Pokemon from './components/Pokemon';
-import Pokedex from './components/Pokedex';
+import Pokedex from './components/Pokedex/Pokedex';
+import Pokemon from './components/Pokemon/Pokemon';
 import { Route, Switch } from 'react-router-dom';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import THEME from './theme/theme'
 import './App.scss';
 
 function App() {
   return (
-    <Switch>
-      <Route path='/' exact render={(props) => <Pokedex {...props} />} />
-      <Route exact path='/:pokemonId' render={(props) => <Pokemon {...props} />} />
-    </Switch>
+    <MuiThemeProvider theme={THEME}>
+      <Switch>
+        <Route path='/' exact render={(props) => <Pokedex {...props} />} />
+        <Route exact path='/:pokemonId' render={(props) => <Pokemon {...props} />} />
+      </Switch>
+    </MuiThemeProvider>
   );
 }
 

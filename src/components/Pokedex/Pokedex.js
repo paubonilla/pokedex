@@ -1,39 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Grid, Card, CardContent, CircularProgress, CardMedia, Typography, TextField } from '@material-ui/core';
-import { fade, makeStyles } from '@material-ui/core/styles';
-import { toFirstCharUppercase } from '../constants';
+import {
+  AppBar, Toolbar, Grid, Card, CardContent, CircularProgress, CardMedia, Typography, TextField
+} from '@material-ui/core';
+import { toFirstCharUppercase } from '../../constants';
 import SearchIcon from "@material-ui/icons/Search";
 import axios from 'axios';
-
-const useStyles = makeStyles((theme) => ({
-  pokedexContainer: {
-    paddingTop: '20px',
-    paddingLeft: '50px',
-    paddingRight: '50px',
-  },
-  cardMedia: {
-    margin: '0 auto'
-  },
-  cardContent: {
-    textAlign: 'center'
-  },
-  searchContainer: {
-    display: "flex",
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    paddingLeft: "20px",
-    paddingRight: "20px",
-    marginTop: "5px",
-    marginBottom: "5px",
-  },
-  searchIcon: {
-    alignSelf: "flex-end",
-    marginBottom: "5px",
-  },
-  searchInput: {
-    width: "200px",
-    margin: "5px",
-  },
-}));
+import useStyles from './index'
 
 export default function Pokedex(props) {
   const { history } = props;
@@ -68,24 +40,25 @@ export default function Pokedex(props) {
     const { id, name, sprite } = pokemonData[`${pokemonId}`]
     console.log(pokemonData[pokemonId]);
     return (
-      <Grid item xs={12} sm={4} key={pokemonId}>
-        <Card onClick={() => history.push(`/${pokemonId}`)}>
-          <CardMedia
-            className={classes.cardMedia}
-            image={sprite}
-            style={{ width: '130px', height: '130px' }}
-          />
-          <CardContent className={classes.cardContent}>
-            <Typography>{`${id}. ${toFirstCharUppercase(name)}`}</Typography>
-          </CardContent>
-        </Card>
-      </Grid>
+      <>
+        <Grid item xs={12} sm={4} key={pokemonId}>
+          <Card className={classes.cardContainer} onClick={() => history.push(`/${pokemonId}`)}>
+            <CardMedia
+              className={classes.cardMedia}
+              image={sprite}
+            />
+            <CardContent className={classes.cardContent}>
+              <Typography>{`${id} ${toFirstCharUppercase(name)}`}</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      </>
     )
   }
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar className={classes.appBarContainer}>
         <Toolbar>
           <div className={classes.searchContainer}>
             <SearchIcon className={classes.searchIcon} />
@@ -99,7 +72,7 @@ export default function Pokedex(props) {
         </Toolbar>
       </AppBar>
       {pokemonData ? (
-        <Grid container spacing={2} className={classes.pokedexContainer}>
+        <Grid container spacing={4} className={classes.pokedexContainer}>
           {Object.keys(pokemonData).map((pokemonId) =>
             pokemonData[pokemonId].name.includes(filter) &&
             getPokemonCard(pokemonId)
