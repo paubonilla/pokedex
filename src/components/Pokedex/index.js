@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#db092c',
     width: '100%'
   },
-  searchContainer: {
+  searchBarContainer: {
     display: "flex",
     backgroundColor: '#ccfffd',
     paddingLeft: "20px",
@@ -28,12 +28,15 @@ const useStyles = makeStyles(() => ({
   },
   pokedexContainer: {
     fontSize: '2rem',
-    paddingTop: '20px',
-    paddingLeft: '50px',
-    paddingRight: '50px',
+    margin: '0 auto',
+    display: 'flex',
+    justifyContent: 'center',
   },
   cardContainer: {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    width: '300px',
+    height: '400px',
+    margin: '2rem 0'
   },
   cardMedia: {
     margin: '0 auto',

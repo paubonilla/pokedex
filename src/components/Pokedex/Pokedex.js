@@ -41,7 +41,7 @@ export default function Pokedex(props) {
     console.log(pokemonData[pokemonId]);
     return (
       <>
-        <Grid item xs={12} sm={4} key={pokemonId}>
+        <Grid item key={pokemonId}>
           <Card className={classes.cardContainer} onClick={() => history.push(`/${pokemonId}`)}>
             <CardMedia
               className={classes.cardMedia}
@@ -60,7 +60,7 @@ export default function Pokedex(props) {
     <>
       <AppBar className={classes.appBarContainer}>
         <Toolbar>
-          <div className={classes.searchContainer}>
+          <div className={classes.searchBarContainer}>
             <SearchIcon className={classes.searchIcon} />
             <TextField
               className={classes.searchInput}
@@ -72,7 +72,10 @@ export default function Pokedex(props) {
         </Toolbar>
       </AppBar>
       {pokemonData ? (
-        <Grid container spacing={4} className={classes.pokedexContainer}>
+        <Grid
+          container
+          className={classes.pokedexContainer}
+        >
           {Object.keys(pokemonData).map((pokemonId) =>
             pokemonData[pokemonId].name.includes(filter) &&
             getPokemonCard(pokemonId)
