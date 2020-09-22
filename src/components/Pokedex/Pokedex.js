@@ -43,12 +43,22 @@ export default function Pokedex(props) {
       <>
         <Grid item key={pokemonId}>
           <Card className={classes.cardContainer} onClick={() => history.push(`/${pokemonId}`)}>
+            <Typography
+              style={{
+                backgroundColor: '#2d4059',
+                color: '#f1f3f8',
+                padding: '1.5rem',
+                fontSize: '20px'
+              }}
+            >
+              {`00${id}`}
+            </Typography>
             <CardMedia
               className={classes.cardMedia}
               image={sprite}
             />
             <CardContent className={classes.cardContent}>
-              <Typography>{`${id} ${toFirstCharUppercase(name)}`}</Typography>
+              <Typography>{`${toFirstCharUppercase(name)}`}</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -65,24 +75,36 @@ export default function Pokedex(props) {
             <TextField
               className={classes.searchInput}
               onChange={handleSearchChange}
-              label="Pokemon"
+              label="Pokémon"
               variant="standard"
             />
           </div>
         </Toolbar>
+        <Typography
+          style={{
+            padding: '1rem',
+            margin: '2px auto',
+          }}>
+          All 807 Pokémons registered
+            </Typography>
       </AppBar>
       {pokemonData ? (
-        <Grid
-          container
-          xs={12}
-          sm={4}
-          className={classes.pokedexContainer}
-        >
-          {Object.keys(pokemonData).map((pokemonId) =>
-            pokemonData[pokemonId].name.includes(filter) &&
-            getPokemonCard(pokemonId)
-          )}
-        </Grid>
+        <>
+          <div className="main">
+            <Grid
+              container
+              xs={12}
+              sm={4}
+              md={6}
+              className={classes.pokedexContainer}
+            >
+              {Object.keys(pokemonData).map((pokemonId) =>
+                pokemonData[pokemonId].name.includes(filter) &&
+                getPokemonCard(pokemonId)
+              )}
+            </Grid>
+          </div>
+        </>
       ) : (CircularProgress)}
     </>
   )

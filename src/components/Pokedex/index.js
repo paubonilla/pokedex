@@ -12,14 +12,13 @@ const useStyles = makeStyles(() => ({
   searchBarContainer: {
     display: "flex",
     backgroundColor: '#ccfffd',
-    paddingLeft: "20px",
-    paddingRight: "20px",
-    marginTop: "5px",
-    marginBottom: "5px",
+    borderRadius: '7px',
+    padding: "10px 20px",
+    margin: "20px 0",
   },
   searchIcon: {
     alignSelf: "flex-end",
-    marginBottom: "5px",
+    margin: "6px",
     color: '#2c2c2c'
   },
   searchInput: {
@@ -32,22 +31,28 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
-    maxWidth: '60vw',
+    maxWidth: '70%',
   },
   cardContainer: {
     cursor: 'pointer',
     width: '300px',
     height: '400px',
     margin: '1rem',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    backgroundColor: '#e4f9ff',
   },
   cardMedia: {
-    margin: '0 auto',
+    margin: '30px auto',
     width: '200px',
     height: '200px',
+    backgroundColor: '#ddf3f5',
+    // backgroundColor: '#a6dcef',
+    borderRadius: '100px',
   },
   cardContent: {
     textAlign: 'center',
-    fontFamily: 'Press Start 2P'
   }
 }));
 
