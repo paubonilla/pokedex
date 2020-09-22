@@ -74,6 +74,8 @@ export default function Pokedex(props) {
       {pokemonData ? (
         <Grid
           container
+          xs={12}
+          sm={4}
           className={classes.pokedexContainer}
         >
           {Object.keys(pokemonData).map((pokemonId) =>

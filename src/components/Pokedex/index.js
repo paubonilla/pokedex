@@ -31,12 +31,14 @@ const useStyles = makeStyles(() => ({
     margin: '0 auto',
     display: 'flex',
     justifyContent: 'center',
+    width: '100%',
+    maxWidth: '60vw',
   },
   cardContainer: {
     cursor: 'pointer',
     width: '300px',
     height: '400px',
-    margin: '2rem 0'
+    margin: '1rem',
   },
   cardMedia: {
     margin: '0 auto',
