@@ -53,10 +53,28 @@ export default function Pokedex(props) {
             >
               {`00${id}`}
             </Typography>
-            <CardMedia
-              className={classes.cardMedia}
-              image={sprite}
-            />
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'relative',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  backgroundColor: '#ddf3f5',
+                  borderRadius: '100px',
+                  width: '160px',
+                  height: '160px',
+                }}
+              />
+              <CardMedia
+                className={classes.cardMedia}
+                image={sprite}
+              />
+            </div>
             <CardContent className={classes.cardContent}>
               <Typography>{`${toFirstCharUppercase(name)}`}</Typography>
             </CardContent>

@@ -42,14 +42,17 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     flexDirection: 'column',
     backgroundColor: '#e4f9ff',
+    transition: '0.9s ease-out',
+    "&:hover": {
+      backgroundColor: '#a6dcef',
+      transition: '0.4s ease-out',
+    }
   },
   cardMedia: {
     margin: '30px auto',
     width: '200px',
-    height: '200px',
-    backgroundColor: '#ddf3f5',
-    // backgroundColor: '#a6dcef',
-    borderRadius: '100px',
+    height: '220px',
+    zIndex: '10000'
   },
   cardContent: {
     textAlign: 'center',
