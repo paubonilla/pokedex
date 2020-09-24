@@ -40,12 +40,10 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    // backgroundColor: '#a6dcef',
     backgroundColor: '#e0ece4',
     transition: '0.6s ease-out',
     "&:hover": {
       backgroundColor: '#e4f9ff',
-      // backgroundColor: '#70adb5',
       boxShadow: '0 2.8px 2.2px rgb(16, 66, 86, 0.034), 0 6.7px 5.3px rgb(16, 66, 86, 0.048), 0 12.5px 10px rgb(16, 66, 86, 0.06), 0 22.3px 17.9px rgb(16, 66, 86, 0.072), 0 41.8px 33.4px rgb(16, 66, 86, 0.086), 0 100px 80px rgb(16, 66, 86, 0.12), inset 0 0 100px 100px rgb(16, 66, 86, 0.12)',
       transition: '0.4s ease-out',
     }
@@ -57,15 +55,20 @@ const useStyles = makeStyles(() => ({
     position: 'relative',
     // overflow: 'hidden'
   },
+  circleBG: {
+    position: 'absolute',
+    backgroundColor: '#e0ece4',
+    boxShadow: '0 2.8px 2.2px rgb(28, 116, 151, 0.034), 0 6.7px 5.3px rgb(28, 116, 151, 0.048), 0 12.5px 10px rgb(28, 116, 151, 0.06), 0 22.3px 17.9px rgb(28, 116, 151, 0.072), 0 41.8px 33.4px rgb(28, 116, 151, 0.086), 0 100px 80px rgb(28, 116, 151, 0.12), inset 0 0 100px 100px rgb(28, 116, 151, 0.12)',
+    borderRadius: '50px',
+    width: '130px',
+    height: '130px',
+    transition: '0.6s ease-out',
+  },
   cardMedia: {
     margin: '30px auto',
     width: '220px',
     height: '220px',
     zIndex: '10000',
-    "&:hover": {
-      // width: '260px',
-      // height: '260px',
-    }
   },
   cardContent: {
     textAlign: 'center',

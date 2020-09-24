@@ -6,19 +6,6 @@ import { toFirstCharUppercase } from '../../constants';
 import SearchIcon from "@material-ui/icons/Search";
 import axios from 'axios';
 import useStyles from './index'
-import styled from 'styled-components'
-
-export const pokemonCon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  /* position: absolute;
-  background-color: #ddf3f5;
-  border-radius: 100px;
-  width: 160px;
-  height: 160px; */
-`
 
 export default function Pokedex(props) {
   const { history } = props;
@@ -60,18 +47,7 @@ export default function Pokedex(props) {
               {`00${id}`}
             </Typography>
             <div className={classes.pokemonMedia}>
-              <div
-                style={{
-                  position: 'absolute',
-                  // backgroundColor: '#ecf4f3',
-                  // backgroundColor: '#a6dcef',
-                  backgroundColor: '#e0ece4',
-                  boxShadow: '0 2.8px 2.2px rgb(28, 116, 151, 0.034), 0 6.7px 5.3px rgb(28, 116, 151, 0.048), 0 12.5px 10px rgb(28, 116, 151, 0.06), 0 22.3px 17.9px rgb(28, 116, 151, 0.072), 0 41.8px 33.4px rgb(28, 116, 151, 0.086), 0 100px 80px rgb(28, 116, 151, 0.12), inset 0 0 100px 100px rgb(28, 116, 151, 0.12)',
-                  borderRadius: '50px',
-                  width: '130px',
-                  height: '130px',
-                }}
-              />
+              <div className={classes.circleBG} />
               <CardMedia
                 className={classes.cardMedia}
                 image={sprite}
