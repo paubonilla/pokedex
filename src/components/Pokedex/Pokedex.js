@@ -46,7 +46,7 @@ export default function Pokedex(props) {
   }, []);
 
   const handleSearchChange = (e) => {
-    setFilter(e.target.value);
+    setFilter(e.target.value.toLowerCase());
   };
 
   const getPokemonCard = (pokemonId) => {
